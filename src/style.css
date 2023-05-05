@@ -139,12 +139,20 @@ table {
 
 html {
     font-family: 'caveat', sans-serif;
-    background-image: url('./img/background-pic.jpg');
+    color: #e7e7e9;
+}
+
+body {
+    display: flex;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
-    color: #e7e7e9;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100vh;
+    width: 100vw;
 }
 
 /* Fixed Header */
@@ -158,18 +166,13 @@ footer {
     background-color: rgba(0, 0, 0, 0.818);
 }
 
-#restaurant-name-and-image {
+#title-and-image {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2.5em;
     margin-top: 0.5em;
-    margin-left: 1em;
-}
-
-#teriyaki-img {
-    height: 3em;
-    width: auto;
+    margin-bottom: 0.2em;
 }
 
 .tab-button {
@@ -178,7 +181,6 @@ footer {
     background: none;
     font-size: 1.5em;
     height: 2em;
-    margin-right: 0.8em;
     color: #e7e7e9;
 }
 
@@ -189,14 +191,31 @@ footer {
 
 #content {
     display: flex;
-    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0.5;
+    background-color: rgba(0, 0, 0, 0.818);
+    margin: 2em 10em 2em 10em;
+    border-radius: 1em;
+}
+
+#content > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+#main-title,
+#sub-title {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+#main-img {
+    height: 24em;
 }
 
 footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
     font-size: 1.5em;
 }
 
@@ -214,12 +233,16 @@ footer {
 /* Styling for Phone */
 
 @media (max-width: 540px) {
-    #restaurant-name-and-image {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2.5em;
-        margin-top: 0.5em;
-        margin-left: 0.8em;
+    #content {
+        margin: 2em 2em 2em 2em;
+    }
+
+    #main-title,
+    #sub-title {
+        font-size: 1.6em;
+    }
+
+    #main-img {
+        height: 16em;
     }
 }
