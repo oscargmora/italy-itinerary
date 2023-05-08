@@ -1,7 +1,7 @@
 const parent = document.querySelector('#content');
 
 const createHomePage = () => {
-    document.body.style.backgroundImage = "url('img/background-img.jpeg')";
+    document.body.style.backgroundImage = "url('./img/background-img.jpeg')";
 
     const div = document.createElement('div');
     div.classList.add('div');
