@@ -1,7 +1,9 @@
 import createHomePage from './homePage';
+import createNewPage from './tabs';
 
-const homePageLoad = () => {
+const initialLoad = () => {
     createHomePage();
+    createNewPage();
 };
 
-export default homePageLoad;
+export default initialLoad;

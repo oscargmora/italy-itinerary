@@ -1,4 +1,4 @@
-import homePageLoad from './pageLoad';
+import initialLoad from './pageLoad';
 import './style.css';
 
-homePageLoad();
+initialLoad();

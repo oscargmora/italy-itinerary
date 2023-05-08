@@ -155,7 +155,7 @@ body {
     width: 100vw;
 }
 
-/* Fixed Header */
+/* Header */
 
 header,
 footer {
@@ -166,7 +166,7 @@ footer {
     background-color: rgba(0, 0, 0, 0.818);
 }
 
-#title-and-image {
+#title-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -188,6 +188,8 @@ footer {
     cursor: pointer;
     color: yellow;
 }
+
+/* Main Content */
 
 #content {
     display: flex;
@@ -211,9 +213,41 @@ footer {
     text-align: center;
 }
 
+/* Home Page */
+
 #main-img {
     height: 24em;
 }
+
+/* Tab Pages */
+
+.list-header {
+    margin: 1em;
+    font-size: 2em;
+}
+
+.li {
+    margin: 1em;
+}
+
+.tab-img {
+    height: 5em;
+}
+
+.img-ul-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Title Custom Property */
+
+.main-div-rome,
+.main-div-amalfi {
+    padding-top: 2em;
+}
+
+/* Footer*/
 
 footer {
     font-size: 1.5em;
@@ -244,5 +278,14 @@ footer {
 
     #main-img {
         height: 16em;
+    }
+
+    .list-header {
+        margin: 1em;
+        font-size: 1em;
+    }
+
+    .main-div-rome {
+        padding-top: 0;
     }
 }
