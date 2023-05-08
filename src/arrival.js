@@ -27,7 +27,7 @@ function createItinerary(subContainer, date, array) {
 
 const createArrivalPage = () => {
     document.body.style.backgroundImage =
-        "url('./img/arrival-background-img.jpeg')";
+        "url('img/arrival-background-img.jpeg')";
 
     const div = document.createElement('div');
     div.classList.add('div');

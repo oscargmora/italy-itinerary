@@ -85,8 +85,7 @@ function createItineraryImgRight(subContainer, date, array, img) {
 }
 
 const createRomePage = () => {
-    document.body.style.backgroundImage =
-        "url('./img/rome-background-img.jpg')";
+    document.body.style.backgroundImage = "url('img/rome-background-img.jpg')";
 
     const div = document.createElement('div');
     div.classList.add('div');
@@ -111,13 +110,13 @@ const createRomePage = () => {
         subContainer,
         'May 10th',
         mayTenth,
-        './img/colosseum-img.png'
+        'img/colosseum-img.png'
     );
     createItineraryImgRight(
         subContainer,
         'May 11th',
         mayEleventh,
-        './img/sistine-chapel-img.png'
+        'img/sistine-chapel-img.png'
     );
 };
 
