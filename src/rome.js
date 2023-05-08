@@ -8,11 +8,11 @@ const mayTenth = [
 ];
 const mayEleventh = ['7:00 AM: Vatican City', '8:00 PM: Campo de Fiori'];
 
-function createMayTenthItinerary(subContainer) {
+function createItineraryImgLeft(subContainer, date, array, img) {
     // Create List Header
     const listHeader = document.createElement('h4');
     listHeader.classList.add('list-header');
-    listHeader.innerText = 'May 10th';
+    listHeader.innerText = date;
     subContainer.appendChild(listHeader);
 
     // Create Unordered List
@@ -24,10 +24,10 @@ function createMayTenthItinerary(subContainer) {
     ul.appendChild(container);
 
     // Add Image to Container
-    const mayTenthImg = document.createElement('img');
-    mayTenthImg.src = '/src/img/colosseum-img.png';
-    mayTenthImg.classList.add('tab-img');
-    container.appendChild(mayTenthImg);
+    const listImg = document.createElement('img');
+    listImg.src = img;
+    listImg.classList.add('tab-img');
+    container.appendChild(listImg);
 
     // Add Container to Unordered List
     const liContainer = document.createElement('container');
@@ -35,7 +35,7 @@ function createMayTenthItinerary(subContainer) {
     container.appendChild(liContainer);
 
     // Affix Array to Unordered List
-    mayTenth.forEach((time) => {
+    array.forEach((time) => {
         const li = document.createElement('li');
         li.classList.add('li');
         li.innerText = time;
@@ -46,11 +46,11 @@ function createMayTenthItinerary(subContainer) {
     listHeader.appendChild(ul);
 }
 
-function createMayEleventhItinerary(subContainer) {
+function createItineraryImgRight(subContainer, date, array, img) {
     // Create List Header
     const listHeader = document.createElement('h4');
     listHeader.classList.add('list-header');
-    listHeader.innerText = 'May 11th';
+    listHeader.innerText = date;
     subContainer.appendChild(listHeader);
 
     // Create Unordered List
@@ -67,7 +67,7 @@ function createMayEleventhItinerary(subContainer) {
     container.appendChild(liContainer);
 
     // Affix Array to Unordered List
-    mayEleventh.forEach((time) => {
+    array.forEach((time) => {
         const li = document.createElement('li');
         li.classList.add('li');
         li.innerText = time;
@@ -75,18 +75,13 @@ function createMayEleventhItinerary(subContainer) {
     });
 
     // Add Image to Container
-    const mayEleventhImg = document.createElement('img');
-    mayEleventhImg.src = '/src/img/sistine-chapel-img.png';
-    mayEleventhImg.classList.add('tab-img');
-    container.appendChild(mayEleventhImg);
+    const listImg = document.createElement('img');
+    listImg.src = img;
+    listImg.classList.add('tab-img');
+    container.appendChild(listImg);
 
     // Append Unordered List to List Header
     listHeader.appendChild(ul);
-}
-
-function createAllItineraries(subContainer) {
-    createMayTenthItinerary(subContainer);
-    createMayEleventhItinerary(subContainer);
 }
 
 const createRomePage = () => {
@@ -112,7 +107,18 @@ const createRomePage = () => {
     subContainer.classList.add('sub-container');
     div.appendChild(subContainer);
 
-    createAllItineraries(subContainer);
+    createItineraryImgLeft(
+        subContainer,
+        'May 10th',
+        mayTenth,
+        '/src/img/colosseum-img.png'
+    );
+    createItineraryImgRight(
+        subContainer,
+        'May 11th',
+        mayEleventh,
+        '/src/img/sistine-chapel-img.png'
+    );
 };
 
 export default createRomePage;

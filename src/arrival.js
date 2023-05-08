@@ -9,41 +9,20 @@ const maySeventeenth = [
     '3:30 PM: Land in MIA'
 ];
 
-function createMaySixteenthItinerary(subContainer) {
+function createItinerary(subContainer, date, array) {
     const listHeader = document.createElement('h4');
     listHeader.classList.add('list-header');
-    listHeader.innerText = 'May 8th';
+    listHeader.innerText = date;
     subContainer.appendChild(listHeader);
     const ul = document.createElement('ul');
     ul.classList.add('ul');
-    maySixteenth.forEach((time) => {
+    array.forEach((time) => {
         const li = document.createElement('li');
         li.classList.add('li');
         li.innerText = time;
         ul.appendChild(li);
     });
     listHeader.appendChild(ul);
-}
-
-function createMaySeventeenthItinerary(subContainer) {
-    const listHeader = document.createElement('h4');
-    listHeader.classList.add('list-header');
-    listHeader.innerText = 'May 9th';
-    subContainer.appendChild(listHeader);
-    const ul = document.createElement('ul');
-    ul.classList.add('ul');
-    maySeventeenth.forEach((time) => {
-        const li = document.createElement('li');
-        li.classList.add('li');
-        li.innerText = time;
-        ul.appendChild(li);
-    });
-    listHeader.appendChild(ul);
-}
-
-function createAllItineraries(subContainer) {
-    createMaySixteenthItinerary(subContainer);
-    createMaySeventeenthItinerary(subContainer);
 }
 
 const createArrivalPage = () => {
@@ -68,7 +47,8 @@ const createArrivalPage = () => {
     subContainer.classList.add('sub-container');
     div.appendChild(subContainer);
 
-    createAllItineraries(subContainer);
+    createItinerary(subContainer, 'May 16th', maySixteenth);
+    createItinerary(subContainer, 'May 17th', maySeventeenth);
 };
 
 export default createArrivalPage;

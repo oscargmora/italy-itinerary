@@ -1,7 +1,7 @@
 const parent = document.querySelector('#content');
 
 const mayTwelfth = [
-    '6:30 AM - 8:30 am: Train from Rome Termini to Napoli Centrale',
+    '6:30 AM - 8:30 AM: Train from Rome Termini to Napoli Centrale',
     '9:00 AM - 10:30 AM: Bus from Napoli Centrale to Sorrento Enjoy Traveling Office',
     '11:00 AM: Freeway Scooter Pickup',
     '11:30 AM: 7 Hostel Check-In',
@@ -24,11 +24,11 @@ const mayFifteenth = [
     '9:00 PM: La Tagliata'
 ];
 
-function createMayTwelfthItinerary(subContainer) {
+function createItineraryImgLeft(subContainer, date, array, img) {
     // Create List Header
     const listHeader = document.createElement('h4');
     listHeader.classList.add('list-header');
-    listHeader.innerText = 'May 12th';
+    listHeader.innerText = date;
     subContainer.appendChild(listHeader);
 
     // Create Unordered List
@@ -40,10 +40,10 @@ function createMayTwelfthItinerary(subContainer) {
     ul.appendChild(container);
 
     // Add Image to Container
-    const mayTwelfthImg = document.createElement('img');
-    mayTwelfthImg.src = '/src/img/moped-img.png';
-    mayTwelfthImg.classList.add('tab-img');
-    container.appendChild(mayTwelfthImg);
+    const listImg = document.createElement('img');
+    listImg.src = img;
+    listImg.classList.add('tab-img');
+    container.appendChild(listImg);
 
     // Add Container to Unordered List
     const liContainer = document.createElement('container');
@@ -51,7 +51,7 @@ function createMayTwelfthItinerary(subContainer) {
     container.appendChild(liContainer);
 
     // Affix Array to Unordered List
-    mayTwelfth.forEach((time) => {
+    array.forEach((time) => {
         const li = document.createElement('li');
         li.classList.add('li');
         li.innerText = time;
@@ -62,87 +62,11 @@ function createMayTwelfthItinerary(subContainer) {
     listHeader.appendChild(ul);
 }
 
-function createMayThirteenItinerary(subContainer) {
+function createItineraryImgRight(subContainer, date, array, img) {
     // Create List Header
     const listHeader = document.createElement('h4');
     listHeader.classList.add('list-header');
-    listHeader.innerText = 'May 13th';
-    subContainer.appendChild(listHeader);
-
-    // Create Unordered List
-    const ul = document.createElement('ul');
-
-    // Add Container to Unordered List
-    const container = document.createElement('container');
-    container.classList.add('img-ul-container');
-    ul.appendChild(container);
-
-    // Add Container to Unordered List
-    const liContainer = document.createElement('container');
-    liContainer.classList.add('li-container');
-    container.appendChild(liContainer);
-
-    // Affix Array to Unordered List
-    mayThirteenth.forEach((time) => {
-        const li = document.createElement('li');
-        li.classList.add('li');
-        li.innerText = time;
-        liContainer.appendChild(li);
-    });
-
-    // Add Image to Container
-    const mayThirteenthImg = document.createElement('img');
-    mayThirteenthImg.src = '/src/img/boat-img.png';
-    mayThirteenthImg.classList.add('tab-img');
-    container.appendChild(mayThirteenthImg);
-
-    // Append Unordered List to List Header
-    listHeader.appendChild(ul);
-}
-
-function createMayFourteenItinerary(subContainer) {
-    // Create List Header
-    const listHeader = document.createElement('h4');
-    listHeader.classList.add('list-header');
-    listHeader.innerText = 'May 14th';
-    subContainer.appendChild(listHeader);
-
-    // Create Unordered List
-    const ul = document.createElement('ul');
-
-    // Add Container to Unordered List
-    const container = document.createElement('container');
-    container.classList.add('img-ul-container');
-    ul.appendChild(container);
-
-    // Add Image to Container
-    const mayFourteenthImg = document.createElement('img');
-    mayFourteenthImg.src = '/src/img/food-img.png';
-    mayFourteenthImg.classList.add('tab-img');
-    container.appendChild(mayFourteenthImg);
-
-    // Add Container to Unordered List
-    const liContainer = document.createElement('container');
-    liContainer.classList.add('li-container');
-    container.appendChild(liContainer);
-
-    // Affix Array to Unordered List
-    mayFourteenth.forEach((time) => {
-        const li = document.createElement('li');
-        li.classList.add('li');
-        li.innerText = time;
-        liContainer.appendChild(li);
-    });
-
-    // Append Unordered List to List Header
-    listHeader.appendChild(ul);
-}
-
-function createMayFifteenItinerary(subContainer) {
-    // Create List Header
-    const listHeader = document.createElement('h4');
-    listHeader.classList.add('list-header');
-    listHeader.innerText = 'May 15th';
+    listHeader.innerText = date;
     subContainer.appendChild(listHeader);
 
     // Create Unordered List
@@ -159,7 +83,7 @@ function createMayFifteenItinerary(subContainer) {
     container.appendChild(liContainer);
 
     // Affix Array to Unordered List
-    mayFifteenth.forEach((time) => {
+    array.forEach((time) => {
         const li = document.createElement('li');
         li.classList.add('li');
         li.innerText = time;
@@ -167,20 +91,13 @@ function createMayFifteenItinerary(subContainer) {
     });
 
     // Add Image to Container
-    const mayFifteenthImg = document.createElement('img');
-    mayFifteenthImg.src = '/src/img/restaurant-img.png';
-    mayFifteenthImg.classList.add('tab-img');
-    container.appendChild(mayFifteenthImg);
+    const listImg = document.createElement('img');
+    listImg.src = img;
+    listImg.classList.add('tab-img');
+    container.appendChild(listImg);
 
     // Append Unordered List to List Header
     listHeader.appendChild(ul);
-}
-
-function createAllItineraries(subContainer) {
-    createMayTwelfthItinerary(subContainer);
-    createMayThirteenItinerary(subContainer);
-    createMayFourteenItinerary(subContainer);
-    createMayFifteenItinerary(subContainer);
 }
 
 const createAmalfiPage = () => {
@@ -206,7 +123,30 @@ const createAmalfiPage = () => {
     subContainer.classList.add('sub-container');
     div.appendChild(subContainer);
 
-    createAllItineraries(subContainer);
+    createItineraryImgLeft(
+        subContainer,
+        'May 12th',
+        mayTwelfth,
+        '/src/img/moped-img.png'
+    );
+    createItineraryImgRight(
+        subContainer,
+        'May 13th',
+        mayThirteenth,
+        '/src/img/boat-img.png'
+    );
+    createItineraryImgLeft(
+        subContainer,
+        'May 14th',
+        mayFourteenth,
+        '/src/img/food-img.png'
+    );
+    createItineraryImgRight(
+        subContainer,
+        'May 15th',
+        mayFifteenth,
+        '/src/img/restaurant-img.png'
+    );
 };
 
 export default createAmalfiPage;
