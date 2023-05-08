@@ -1,7 +1,3 @@
-import backgroundImage from './img/rome-background-img.jpg';
-import colosseumImg from './img/colosseum-img.png';
-import sistineChapelImg from './img/sistine-chapel-img.png';
-
 const parent = document.querySelector('#content');
 
 const mayTenth = [
@@ -89,7 +85,8 @@ function createItineraryImgRight(subContainer, date, array, img) {
 }
 
 const createRomePage = () => {
-    document.body.style.backgroundImage = `url('${backgroundImage}')`;
+    document.body.style.backgroundImage =
+        "url('./img/rome-background-img.jpg')";
 
     const div = document.createElement('div');
     div.classList.add('div');
@@ -110,12 +107,17 @@ const createRomePage = () => {
     subContainer.classList.add('sub-container');
     div.appendChild(subContainer);
 
-    createItineraryImgLeft(subContainer, 'May 10th', mayTenth, colosseumImg);
+    createItineraryImgLeft(
+        subContainer,
+        'May 10th',
+        mayTenth,
+        './img/colosseum-img.png'
+    );
     createItineraryImgRight(
         subContainer,
         'May 11th',
         mayEleventh,
-        sistineChapelImg
+        './img/sistine-chapel-img.png'
     );
 };
 
