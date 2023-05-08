@@ -1,7 +1,10 @@
+import backgroundImage from './img/background-img.jpeg';
+import postcardImg from './img/postcard-img.png';
+
 const parent = document.querySelector('#content');
 
 const createHomePage = () => {
-    document.body.style.backgroundImage = "url('/src/img/background-img.jpeg')";
+    document.body.style.backgroundImage = `url('${backgroundImage}')`;
 
     const div = document.createElement('div');
     div.classList.add('div');
@@ -22,7 +25,7 @@ const createHomePage = () => {
     div.appendChild(imgContainer);
 
     const img = document.createElement('img');
-    img.src = '/src/img/postcard-img.png';
+    img.src = postcardImg;
     img.setAttribute('id', 'main-img');
     imgContainer.appendChild(img);
 

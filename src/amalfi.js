@@ -1,3 +1,9 @@
+import backgroundImage from './img/amalfi-background-img.png';
+import mopedImg from './img/moped-img.png';
+import boatImg from './img/boat-img.png';
+import foodImg from './img/food-img.png';
+import restaurantImg from './img/restaurant-img.png';
+
 const parent = document.querySelector('#content');
 
 const mayTwelfth = [
@@ -101,8 +107,7 @@ function createItineraryImgRight(subContainer, date, array, img) {
 }
 
 const createAmalfiPage = () => {
-    document.body.style.backgroundImage =
-        "url('/src/img/amalfi-background-img.png')";
+    document.body.style.backgroundImage = `url('${backgroundImage}')`;
 
     const div = document.createElement('div');
     div.classList.add('div');
@@ -123,29 +128,14 @@ const createAmalfiPage = () => {
     subContainer.classList.add('sub-container');
     div.appendChild(subContainer);
 
-    createItineraryImgLeft(
-        subContainer,
-        'May 12th',
-        mayTwelfth,
-        '/src/img/moped-img.png'
-    );
-    createItineraryImgRight(
-        subContainer,
-        'May 13th',
-        mayThirteenth,
-        '/src/img/boat-img.png'
-    );
-    createItineraryImgLeft(
-        subContainer,
-        'May 14th',
-        mayFourteenth,
-        '/src/img/food-img.png'
-    );
+    createItineraryImgLeft(subContainer, 'May 12th', mayTwelfth, mopedImg);
+    createItineraryImgRight(subContainer, 'May 13th', mayThirteenth, boatImg);
+    createItineraryImgLeft(subContainer, 'May 14th', mayFourteenth, foodImg);
     createItineraryImgRight(
         subContainer,
         'May 15th',
         mayFifteenth,
-        '/src/img/restaurant-img.png'
+        restaurantImg
     );
 };
 
