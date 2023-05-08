@@ -1,6 +1,6 @@
-import backgroundImage from '/img/rome-background-img.jpg';
-import colosseum from '/img/colosseum-img.png';
-import sistineChapel from '/img/sistine-chapel-img.png';
+import backgroundImage from '../img/rome-background-img.jpg';
+import colosseum from '../img/colosseum-img.png';
+import sistineChapel from '../img/sistine-chapel-img.png';
 
 const parent = document.querySelector('#content');
 
@@ -28,7 +28,7 @@ function createItineraryImgLeft(subContainer, date, array, img) {
     ul.appendChild(container);
 
     // Add Image to Container
-    const listImg = document.createElement('img');
+    const listImg = new Image();
     listImg.src = img;
     listImg.classList.add('tab-img');
     container.appendChild(listImg);
@@ -79,7 +79,7 @@ function createItineraryImgRight(subContainer, date, array, img) {
     });
 
     // Add Image to Container
-    const listImg = document.createElement('img');
+    const listImg = new Image();
     listImg.src = img;
     listImg.classList.add('tab-img');
     container.appendChild(listImg);
@@ -89,7 +89,9 @@ function createItineraryImgRight(subContainer, date, array, img) {
 }
 
 const createRomePage = () => {
-    document.body.style.backgroundImage = `url('${backgroundImage}')`;
+    const background = new Image();
+    background.src = backgroundImage;
+    document.body.style.backgroundImage = `url('${background}')`;
 
     const div = document.createElement('div');
     div.classList.add('div');

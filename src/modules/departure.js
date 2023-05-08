@@ -1,14 +1,13 @@
-import backgroundImage from 'img/arrival-background-img.jpeg';
+import backgroundImage from '../img/departure-background-img.jpeg';
 
 const parent = document.querySelector('#content');
 
-const maySixteenth = [
-    '10:00 AM: Ferry to Naples',
-    '2:00 PM: Bed & Fly Check-In'
-];
-const maySeventeenth = [
-    '7:40 AM: Departure from Naples',
-    '3:30 PM: Land in MIA'
+const mayEighth = ['3:30 PM: Departure from MIA Airport'];
+const mayNinth = [
+    '2:05 PM: Arrival in Naples',
+    '4:30 PM: Train Ride from Napoli Centrale to Rome',
+    '7:00 PM: Arrive at AirBNB',
+    '8:00 PM: Arrive at Campo de Fiori'
 ];
 
 function createItinerary(subContainer, date, array) {
@@ -27,8 +26,10 @@ function createItinerary(subContainer, date, array) {
     listHeader.appendChild(ul);
 }
 
-const createArrivalPage = () => {
-    document.body.style.backgroundImage = `url('${backgroundImage}')`;
+const createDeparturePage = () => {
+    const background = new Image();
+    background.src = backgroundImage;
+    document.body.style.backgroundImage = `url('${background}')`;
 
     const div = document.createElement('div');
     div.classList.add('div');
@@ -40,7 +41,7 @@ const createArrivalPage = () => {
     div.appendChild(mainContainer);
 
     const mainTitle = document.createElement('p');
-    mainTitle.innerText = 'Arrival Information';
+    mainTitle.innerText = 'Departure Information';
     mainTitle.setAttribute('id', 'main-title');
     mainContainer.appendChild(mainTitle);
 
@@ -48,8 +49,8 @@ const createArrivalPage = () => {
     subContainer.classList.add('sub-container');
     div.appendChild(subContainer);
 
-    createItinerary(subContainer, 'May 16th', maySixteenth);
-    createItinerary(subContainer, 'May 17th', maySeventeenth);
+    createItinerary(subContainer, 'May 8th', mayEighth);
+    createItinerary(subContainer, 'May 9th', mayNinth);
 };
 
-export default createArrivalPage;
+export default createDeparturePage;
