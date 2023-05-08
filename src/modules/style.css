@@ -272,7 +272,7 @@ footer {
     }
 
     .tab-button {
-        padding: 0;
+        padding: 0 0.5em 0 0.5em;
     }
 
     #main-title,
