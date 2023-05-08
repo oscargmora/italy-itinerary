@@ -1,4 +1,4 @@
-import backgroundImage from '../img/rome-background-img.jpg';
+import backgroundImage from './img/rome-background-img.jpg';
 import colosseum from '../img/colosseum-img.png';
 import sistineChapel from '../img/sistine-chapel-img.png';
 
@@ -89,7 +89,9 @@ function createItineraryImgRight(subContainer, date, array, img) {
 }
 
 const createRomePage = () => {
-    document.body.style.backgroundImage = `url('${backgroundImage}')`;
+    const background = new Image();
+    background.src = backgroundImage;
+    document.body.style.backgroundImage = `url('${background}')`;
 
     const div = document.createElement('div');
     div.classList.add('div');

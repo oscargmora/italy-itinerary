@@ -1,10 +1,12 @@
-import backgroundImage from '../img/background-img.jpeg';
+import backgroundImage from './img/background-img.jpeg';
 import postcardImg from '../img/postcard-img.png';
 
 const parent = document.querySelector('#content');
 
 const createHomePage = () => {
-    document.body.style.backgroundImage = `url('${backgroundImage}')`;
+    const background = new Image();
+    background.src = backgroundImage;
+    document.body.style.backgroundImage = `url('${background}')`;
 
     const div = document.createElement('div');
     div.classList.add('div');

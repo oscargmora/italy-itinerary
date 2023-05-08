@@ -1,4 +1,4 @@
-import backgroundImage from '../img/departure-background-img.jpeg';
+import backgroundImage from './img/departure-background-img.jpeg';
 
 const parent = document.querySelector('#content');
 
@@ -27,7 +27,9 @@ function createItinerary(subContainer, date, array) {
 }
 
 const createDeparturePage = () => {
-    document.body.style.backgroundImage = `url('${backgroundImage}')`;
+    const background = new Image();
+    background.src = backgroundImage;
+    document.body.style.backgroundImage = `url('${background}')`;
 
     const div = document.createElement('div');
     div.classList.add('div');
