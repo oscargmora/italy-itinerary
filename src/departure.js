@@ -1,3 +1,5 @@
+import backgroundImage from './img/departure-background-img.jpeg';
+
 const parent = document.querySelector('#content');
 
 const mayEighth = ['3:30 PM: Departure from MIA Airport'];
@@ -25,8 +27,7 @@ function createItinerary(subContainer, date, array) {
 }
 
 const createDeparturePage = () => {
-    document.body.style.backgroundImage =
-        "url('./img/departure-background-img.jpeg')";
+    document.body.style.backgroundImage = `url('${backgroundImage}')`;
 
     const div = document.createElement('div');
     div.classList.add('div');

@@ -1,3 +1,5 @@
+import backgroundImage from 'img/arrival-background-img.jpeg';
+
 const parent = document.querySelector('#content');
 
 const maySixteenth = [
@@ -26,8 +28,7 @@ function createItinerary(subContainer, date, array) {
 }
 
 const createArrivalPage = () => {
-    document.body.style.backgroundImage =
-        "url('./img/arrival-background-img.jpeg')";
+    document.body.style.backgroundImage = `url('${backgroundImage}')`;
 
     const div = document.createElement('div');
     div.classList.add('div');
